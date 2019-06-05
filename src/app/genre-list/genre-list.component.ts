@@ -11,6 +11,8 @@ export class GenreListComponent implements OnInit {
 
   public genero;
   public flag = false;
+  public IdGenre: number;
+   
 
   constructor(private _moviesService: MoviesService) { }
 
@@ -20,6 +22,7 @@ export class GenreListComponent implements OnInit {
         this.genero = data;
         console.log(this.genero)
         this.flag = true;
+        // this.IdGenre = data.genre.
       });
   }
 

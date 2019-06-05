@@ -1,6 +1,12 @@
-<div *ngIf="flag">
-  <a>Genres <i type="down"></i></a>
+<!-- <div *ngIf="flag">
+  <button>Genres</button>
     <ul>
-      <li *ngFor='let i of genero.genres'>{{i.name}}</li>
+      <li *ngFor='let i of genero.genres'><a>{{i.name}}</a></li>
     </ul>
+</div> -->
+<div *ngIf="flag" class="dropdown" >
+  <button class="dropbtn">Genres</button>
+  <ul class="dropdown-content" style="list-style-type: none">
+    <li *ngFor='let i of genero.genres' style="list-style-type: none"><a href="#">{{i.name}}</a></li>
+  </ul>
 </div>
