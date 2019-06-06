@@ -5,6 +5,7 @@ import { IGenre } from './genre';
 import { map } from 'rxjs/operators';
 import { IPoster } from './poster';
 import { ISearch} from './search';
+import { IMovieDiscover} from './movieDiscover'
 
 @Injectable({
   providedIn: 'root'
@@ -28,4 +29,9 @@ export class MoviesService {
   getSearch(): Observable<ISearch>{
     return this.http.get<ISearch>("https://api.themoviedb.org/3/search/movie?api_key=95e310c9cdf43a266b381436c3d83f&language=en-US&query=test&page=1&include_adult=false")
   }
+
+  getMovieDiscover(idGenre): Observable<IMovieDiscover>{
+    return this.http.get<IMovieDiscover>("https://api.themoviedb.org/3/discover/movie?api_key=95e310c9cdf43a266b381436c3d83fc8&language=en-US&sort_by=popularity.asc&include_adult=false&include_video=false&page=1&with_genres="+idGenre)
+  }
+
 }

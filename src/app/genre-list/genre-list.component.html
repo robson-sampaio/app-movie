@@ -7,6 +7,7 @@
 <div *ngIf="flag" class="dropdown" >
   <button class="dropbtn">Genres</button>
   <ul class="dropdown-content" style="list-style-type: none">
-    <li *ngFor='let i of genero.genres' style="list-style-type: none"><a href="#">{{i.name}}</a></li>
+    <li *ngFor='let i of genero.genres'><a (click)="returnIdGenre(i.id)" href="#">{{i.name}}</a></li>
   </ul>
 </div>
+<app-poster [parentData]="idGenre"></app-poster>

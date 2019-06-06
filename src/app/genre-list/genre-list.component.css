@@ -13,10 +13,6 @@
     position: relative;
     display: inline-block;
   }
-
-  ul{
-    list-style-type: none;
-  }
   
   /* Dropdown Content (Hidden by Default) */
   .dropdown-content {

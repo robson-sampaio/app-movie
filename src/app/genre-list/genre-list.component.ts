@@ -11,18 +11,23 @@ export class GenreListComponent implements OnInit {
 
   public genero;
   public flag = false;
-  public IdGenre: number;
+  public teste;
+  public idGenre;
    
 
   constructor(private _moviesService: MoviesService) { }
 
+  returnIdGenre(data){
+    this.idGenre = data;
+  }
+
   ngOnInit(){
+
     this._moviesService.getGenre()
       .subscribe(data => {
         this.genero = data;
         console.log(this.genero)
         this.flag = true;
-        // this.IdGenre = data.genre.
       });
   }
 
