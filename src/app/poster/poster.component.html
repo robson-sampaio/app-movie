@@ -1,13 +1,13 @@
-<div *ngIf="flag">
-  <h2> {{ idGenre }}</h2>
+<div *ngIf="flagConfig">
+  <!-- <h2> {{ idGenre }}</h2> -->
   <ul style="text-align: center">
-    <li *ngFor="let i of movie.results">{{i.title}}<br><img src="http://image.tmdb.org/t/p/w342/{{i.backdrop_path}}"></li>
+    <li *ngFor="let i of movie.results">{{i.title}}<br><img src="{{config.images.base_url}}{{config.images.poster_sizes[0]}}{{i.backdrop_path}}"></li>
   </ul> 
 </div>
 
 <!-- <div *ngIf="flagChange">
   <h2> {{ idGenre }}</h2>
   <ul style="text-align: center">
-    <li *ngFor="let i of movie.results">{{i.title}}<br><img src=http://image.tmdb.org/t/p/w500/{{i.backdrop_path}}></li>
+    <li *ngFor="let i of movie.results">{{i.title}}<br><img src=http://image.tmdb.org/t/p/w500/{{i.backdrop_path}}></li> 
   </ul> 
 </div> -->

@@ -3,10 +3,14 @@
     Welcome to {{ title }}!
   </h1>
   <div class="menu-bar">
-    <app-genre-list></app-genre-list>
+    <ul style="display: inline">
+      <!-- <li><app-sort-by></app-sort-by></li> -->
+      <li ><app-genre-list></app-genre-list></li>
+    </ul>
   </div>
   
-  <div class="app-poster">
-    <!-- <app-poster [parentData]="teste"></app-poster> -->
-  </div>
+  
+  <!-- <div class="app-poster">
+    <app-poster [parentData]="teste"></app-poster>
+  </div> -->
 <router-outlet></router-outlet>

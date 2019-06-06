@@ -9,6 +9,7 @@ import { SearchComponent } from './search/search.component';
 import { HttpClientModule} from '@angular/common/http';
 import { GenreListComponent } from './genre-list/genre-list.component';
 import { PosterComponent } from './poster/poster.component';
+import { SortByComponent } from './sort-by/sort-by.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { PosterComponent } from './poster/poster.component';
     SearchComponent,
     GenreListComponent,
     PosterComponent,
+    SortByComponent,
   ],
   imports: [
     BrowserModule,

@@ -13,7 +13,7 @@ export class GenreListComponent implements OnInit {
   public flag = false;
   public teste;
   public idGenre;
-   
+  public sortBy;
 
   constructor(private _moviesService: MoviesService) { }
 
@@ -22,7 +22,6 @@ export class GenreListComponent implements OnInit {
   }
 
   ngOnInit(){
-
     this._moviesService.getGenre()
       .subscribe(data => {
         this.genero = data;
