@@ -4,26 +4,17 @@
       <li *ngFor='let i of genero.genres'><a>{{i.name}}</a></li>
     </ul>
 </div> -->
-<ul>
-  <li style="display: inline">
-    <div *ngIf="flag" class="dropdown" >
-      <button class="dropbtn">Genres</button>
-      <ul class="dropdown-content" style="list-style-type: none">
-        <li *ngFor='let i of genero.genres'><a (click)="returnIdGenre(i.id)" href="#">{{i.name}}</a></li>
-      </ul>
-    </div>
-  </li>
+<div *ngIf="flag">
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item *ngFor='let i of genero.genres'><a (click)="returnIdGenre(i.id)">{{i.name}}</a></button>
+  </mat-menu>
+  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+</div>
 
-  <li style="display: inline">
-    <div *ngIf="flag" class="dropdown" >
-      <button class="dropbtn">Sort by</button>
-      <ul class="dropdown-content" style="list-style-type: none">
-        <li><a (click)="sortBy='sort_by=popularity.desc'" href="#">Popularity</a></li>
-        <li><a (click)="sortBy='sort_by=release_date.desc'" href="#">Release</a></li>
-        <li><a (click)="sortBy='sort_by=vote_average.desc'" href="#">Rated</a></li>
-      </ul>
-    </div>
-  </li>
-</ul>
 
-<app-poster [parentData]="idGenre" [sortbyData]="sortBy"></app-poster>
+<mat-form-field floatLabel="never" style="padding: 10px;">
+  <mat-label>Search</mat-label>
+  <input matInput [(ngModel)]="searchQuery">
+</mat-form-field>
+
+<app-poster [parentData]="idGenre" [sortbyData]="sortBy" [searchQuery]="searchQuery"></app-poster>

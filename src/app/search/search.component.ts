@@ -10,16 +10,17 @@ export class SearchComponent implements OnInit {
 
   public movielist: object;
   public flag = false;
+  public query;
 
   constructor(private _moviesService: MoviesService) { }
 
   ngOnInit() {
-    this._moviesService.getSearch()
+    this._moviesService.getSearchMovies(this.query)
       .subscribe(data => {
         this.movielist = data;
         console.log(this.movielist)
         this.flag = true;
       });
   }
-
+  
 }

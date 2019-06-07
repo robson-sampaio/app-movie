@@ -10,7 +10,12 @@ import { HttpClientModule} from '@angular/common/http';
 import { GenreListComponent } from './genre-list/genre-list.component';
 import { PosterComponent } from './poster/poster.component';
 import { SortByComponent } from './sort-by/sort-by.component';
-
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatListModule } from '@angular/material/list';
+import { MatGridListModule, MatMenuModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,9 +29,19 @@ import { SortByComponent } from './sort-by/sort-by.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatGridListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
+
 export class AppModule { }

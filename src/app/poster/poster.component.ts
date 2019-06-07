@@ -19,24 +19,41 @@ export class PosterComponent implements OnInit, OnChanges {
   public img_path;
   public config;
   public flagConfig = false;
+  public flagSearch = false;
+  public movieSearch;
    
   // Component interation with the genre-list
   @Input('parentData') public idGenre;  
   @Input('sortbyData') public sortBy;
+  @Input('searchQuery') public query;
 
   constructor(private _moviesService: MoviesService) { }
 
   // For an event in the genre list it changes de list
-  // Anable the user to pick a genre
   ngOnChanges(changes: SimpleChanges){
-    console.log(changes)
-    this._moviesService.getMovieDiscover(this.idGenre, this.sortBy)
+
+    // if(changes.SimpleChanges.currentValue){
+      console.log(changes)
+      // Método que busca um filme na API
+      this.flagConfig = false;
+      this._moviesService.getSearchMovies(this.query)
+      .subscribe(data => {
+      this.movie = data;  
+      this.flagConfig = true;    
+    });
+    // }
+    
+    // console.log(changes)
+    // Método que mostra os filmes
+    if(changes.idGenre){
+      this._moviesService.getMovieDiscover(this.idGenre)
       .subscribe(data => {
         this.movie = data;
         // console.log(this.movie)
         this.flagChange = true;
         // this.flag = false;
       });
+    }
   }
 
   ngOnInit() {
@@ -52,4 +69,5 @@ export class PosterComponent implements OnInit, OnChanges {
       })
     });
   }
+
 }
