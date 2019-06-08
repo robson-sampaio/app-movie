@@ -1,20 +1,22 @@
-<!-- <div *ngIf="flag">
-  <button>Genres</button>
-    <ul>
-      <li *ngFor='let i of genero.genres'><a>{{i.name}}</a></li>
-    </ul>
-</div> -->
-<div *ngIf="flag">
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item *ngFor='let i of genero.genres'><a (click)="returnIdGenre(i.id)">{{i.name}}</a></button>
-  </mat-menu>
-  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+
+<div id="container-menu">
+        <div id="genre-list" *ngIf="flag">
+          <!-- <button>teste 1</button> -->
+            <mat-menu #menu="matMenu">
+                <ng-template matMenuContent>
+                  <button mat-menu-item *ngFor='let i of genero.genres'><a (click)="returnIdGenre(i.id)">{{i.name}}</a></button>
+                </ng-template>
+            </mat-menu>
+            <button mat-flat-button [matMenuTriggerFor]="menu">Menu</button>
+          </div>  
+        <div id="seach-bar" >
+            <!-- <button>teste 2</button> -->
+          <mat-form-field floatLabel="never" style="padding: 10px;">
+            <mat-label>Search</mat-label>
+            <input matInput [(ngModel)]="searchQuery">
+          </mat-form-field>
+        </div>
 </div>
 
+    <app-poster id="posters" [parentData]="idGenre" [sortbyData]="sortBy" [searchQuery]="searchQuery"></app-poster>
 
-<mat-form-field floatLabel="never" style="padding: 10px;">
-  <mat-label>Search</mat-label>
-  <input matInput [(ngModel)]="searchQuery">
-</mat-form-field>
-
-<app-poster [parentData]="idGenre" [sortbyData]="sortBy" [searchQuery]="searchQuery"></app-poster>

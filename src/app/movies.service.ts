@@ -38,6 +38,9 @@ export class MoviesService {
   }
 
   getSearchMovies(query): Observable<ISearchMovies>{
+    if(query == ""){
+      return this.http.get<ISearchMovies>(this.urlMovieDb+"/discover/movie?api_key="+this.apikey+"&language=pt-BR&sort_by=popularity.desc&include_adult=false&include_video=false");
+    }else
     return this.http.get<ISearchMovies>("https://api.themoviedb.org/3/search/movie?api_key=95e310c9cdf43a266b381436c3d83fc8&language=pt-BR&query="+query+"&page=1&include_adult=false");
   }
 
