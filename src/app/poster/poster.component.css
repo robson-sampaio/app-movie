@@ -1,3 +1,34 @@
 ul{
     list-style-type: none;
 }
+
+.card {
+    max-width: 400px;
+  }
+  
+  .header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  
+  /* .mat-expansion-indicator::after {
+    height: 20px;
+   width: 20px;
+   background-image: url(https://img.icons8.com/material/24/000000/plus.png);
+   background-size: cover;
+   border: none;
+   border-width: 0 !important;
+   transform: rotate(0) !important;
+} */
+
+/* mat-expansion-panel{
+    width: 400px;
+    height: 400px;
+    padding-top: 180px;
+  } */
+
+  /* mat-expansion-panel-header::after{
+      position: relative;
+      width: 100%;
+      height: 100%;
+  } */

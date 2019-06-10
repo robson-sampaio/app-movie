@@ -13,9 +13,12 @@ import { SortByComponent } from './sort-by/sort-by.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatListModule } from '@angular/material/list';
-import { MatGridListModule, MatMenuModule } from '@angular/material';
+import { MatGridListModule, MatMenuModule, MatDialogModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import {MatCardModule} from '@angular/material/card';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { DialogPosterComponent } from './dialog-poster/dialog-poster.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,9 @@ import { FormsModule } from '@angular/forms';
     GenreListComponent,
     PosterComponent,
     SortByComponent,
+    DialogPosterComponent,
   ],
+  entryComponents: [DialogPosterComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -37,7 +42,10 @@ import { FormsModule } from '@angular/forms';
     MatGridListModule,
     MatFormFieldModule,
     MatInputModule,
-    MatMenuModule
+    MatMenuModule,
+    MatCardModule,
+    MatExpansionModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

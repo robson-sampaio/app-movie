@@ -1,5 +1,5 @@
-
 <div id="container-menu">
+      <!-- <p> {{movie}}</p> -->
         <div id="genre-list" *ngIf="flag">
           <!-- <button>teste 1</button> -->
             <mat-menu #menu="matMenu">
@@ -18,5 +18,6 @@
         </div>
 </div>
 
-    <app-poster id="posters" [parentData]="idGenre" [sortbyData]="sortBy" [searchQuery]="searchQuery"></app-poster>
+    <app-poster (movieEvent)="movie=$event" id="posters" [parentData]="idGenre" [sortbyData]="sortBy" [searchQuery]="searchQuery"></app-poster>
+    <!-- <app-dialog-poster></app-dialog-poster> -->
 

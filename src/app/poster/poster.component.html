@@ -1,10 +1,5 @@
-<!-- <div *ngIf="flagConfig">
-    <ul style="text-align: center">
-    <li *ngFor="let i of movie.results">{{i.title}}<br><img [src]="config.images.base_url +  config.images.poster_sizes[0] + i.poster_path"></li>
-  </ul> 
-</div> -->
-<!-- "{{config.images.base_url}}{{config.images.poster_sizes[0]}}{{i.backdrop_path}}" -->
-
 <mat-grid-list *ngIf="flagConfig" cols=4  gutterSize="10px" style="background-color: slategrey">
-  <mat-grid-tile *ngFor="let i of movie.results"><img [src]="config.images.base_url +  config.images.poster_sizes[3] + i.poster_path"></mat-grid-tile>
+
+  <mat-grid-tile *ngFor="let i of movie.results"><img (click)="openDialog(i)" [src]="config.images.base_url +  config.images.poster_sizes[3] + i.poster_path"></mat-grid-tile>
+
 </mat-grid-list>
